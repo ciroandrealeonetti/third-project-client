@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home';
 import Anon from './components/Anon';
 import Login from './pages/Login';
+import ExcerciseList from './pages/ExcerciseList';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
        <Anon>
        <Signup/>
         </Anon>
-      
     } />
+    <Route path='/excersiseList' element={<ExcerciseList/>}/>
     <Route path='/login' element={<Login/>} />
       </Routes>
     

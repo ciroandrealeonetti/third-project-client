@@ -4,7 +4,7 @@ body {
 }
 
 .Navbar {
-  background: #515f7d;
+  background: black;
   color: white;
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
@@ -12,5 +12,3 @@ body {
   margin-bottom: 15px;
   padding: 5px;
 }
-
-
