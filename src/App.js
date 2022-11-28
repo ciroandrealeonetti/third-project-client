@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import Anon from './components/Anon';
 import Login from './pages/Login';
 import ExcerciseList from './pages/ExcerciseList';
+import ExcerciseDetails from './pages/ExcerciseDetails';
+import Profile from './pages/Profile';
+
 
 function App() {
   return (
@@ -18,7 +21,9 @@ function App() {
        <Signup/>
         </Anon>
     } />
+    <Route path='/Profile.jsx' element={<Profile/>}/>
     <Route path='/excersiseList' element={<ExcerciseList/>}/>
+    <Route path='/excerciseDetails/:name' element={<ExcerciseDetails/>}/>
     <Route path='/login' element={<Login/>} />
       </Routes>
     
