@@ -1,6 +1,10 @@
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 body {
   margin: 0;
-  background-color: brown;
 }
 
 .Navbar {
@@ -11,4 +15,84 @@ body {
   width: 100%;
   margin-bottom: 15px;
   padding: 5px;
+  display: inline;
+  float: left;
+}
+
+.card-body {
+  border: 2px solid black;
+  padding: 30px;
+  border-radius: 40px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  background-color: black;
+  color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .ExcerciseListPage {
+  background-image: url("/public/30-days-superhero-fitness-challenge-1280x720.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+@media only screen and (max-width: 650px) {
+  .ExcerciseListPage {
+    background-image: none;
+    background-color: #333;
+  }
+}
+
+.AllCards {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* HERO */
+
+.hero-image {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+/* Home HERO */
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/30-days-superhero-fitness-challenge-1280x720.jpeg");
+  min-height: 50vh;
+}
+
+.hero-image .hero-text {
+  top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
