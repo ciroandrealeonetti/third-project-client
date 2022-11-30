@@ -39,17 +39,20 @@ setErrorMessage(errorDescription);
     <div className="LoginPage">
     <Hero/>
     <Card style={{ width: "auto", height: "auto" }}>
-              <Card.Body>
+              <Card.Body className='loginCard'>
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
+        <br />
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
+        <br />
         <input type="password" name="password" value={password} onChange={handlePassword} />
+        <br />
 
-        <button type="submit">Login</button>
+        <button className='button' type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 

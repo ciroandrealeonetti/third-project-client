@@ -34,34 +34,54 @@ function Signup(props) {
 
   return (
     <div className="SignupPage">
-    <Hero/>
-    <Card style={{ width: "auto", height: "auto" }}>
-              <Card.Body>
-      <h1>Signup</h1>
+      <Hero />
+      <Card style={{ width: "auto", height: "auto" }}>
+        <Card.Body className="signupCard">
+          <h1>Signup</h1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Name:</label>
-        <input type="name" name="name" value={name} onChange={handleName} />
+          <form onSubmit={handleSignupSubmit}>
+            <label>Name:</label>
+            <br />
+            <input
+              className="inputName"
+              type="name"
+              name="name"
+              value={name}
+              onChange={handleName}
+            />
+            <br />
 
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+            <label>Email:</label>
+            <br />
+            <input
+              className="inputEmail"
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+            <br />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+            <label>Password:</label>
+            <br />
+            <input
+              className="inputPassword"
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
 
-        <button type="submit">Sign Up</button>
-      </form>
+            <button className="buttonSignup" type="submit">
+              Sign Up
+            </button>
+          </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
-      </Card.Body>
+          <p>Already have account?</p>
+          <Link to={"/login"}> Login</Link>
+        </Card.Body>
       </Card>
     </div>
   );

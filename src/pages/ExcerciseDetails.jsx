@@ -68,7 +68,7 @@ function ExcerciseDetails() {
       <Hero />
       <h1>Exercise Details</h1>
       <Card style={{ width: "auto", height: "auto" }}>
-      <Card.Body>
+      <Card.Body className="detailsCard">
       {excersise && (
         <div key={excersise._id} className="ExcerciseCardDetails">
           <Link to={`/excerciseDetails/${excersise._id}`}>
@@ -88,7 +88,7 @@ function ExcerciseDetails() {
               return <option value={workout._id}>{workout.title} </option>;
             })}
         </select>
-        <button type="submit">Add to workout</button>
+        <button className="button" type="submit">Add to workout</button>
       </form>
       </Card.Body>
       </Card>

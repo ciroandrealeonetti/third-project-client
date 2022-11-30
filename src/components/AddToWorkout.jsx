@@ -43,12 +43,13 @@ await axios.delete(`${process.env.REACT_APP_API_URL}/workout`)
     <div className="Workout">
       
       <Card style={{ width: "auto", height: "auto" }}>
-      <Card.Body>
+      <Card.Body className="workoutCard">
       <h2>Workouts</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
+        <br />
         <input type="text" name="title" value={title} onChange={handleTitle} />
-
+        <br />
         <select onChange={handleGoal} name="goal" value={goal}>
           <option value="lose weight">Lose Weight</option>
           <option value="get toned"> Get Toned</option>

@@ -6,13 +6,13 @@
 
 body {
   margin: 0;
+  
 }
 
 .Navbar {
   background: black;
   color: white;
   padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
   width: 100%;
   margin-bottom: 15px;
   padding: 5px;
@@ -23,13 +23,66 @@ body {
 .card-body {
   border: 2px solid black;
   padding: 30px;
-  border-radius: 40px;
+  border-radius: 20px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
+  height: 200px;
   background-color: black;
   color: white;
   
+}
+
+.profileCard{
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  height: 300px;
+  background-color: black;
+  color: white;
+}
+
+.workoutCard{
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  height: 300px;
+  background-color: black;
+  color: white;
+}
+
+.addWorkoutCard{
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
+
+.detailsCard{
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  height: 800px;
+  background-color: black;
+  color: white;
+}
+
+.eachWorkout{
+height: 100px
 }
 
 .card {
@@ -69,6 +122,29 @@ body {
   
 }
 
+.signupCard{
+  height: 300px;
+}
+
+.loginCard{
+  height: 250px;
+}
+
+.buttonSignup{
+  background-color: black;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.editProfileCard{
+  height: 250px;
+}
+
 
 
 
@@ -83,7 +159,7 @@ body {
 @media only screen and (max-width: 650px) {
   .ExcerciseListPage {
     background-image: none;
-    background-color: #333;
+    background-color: white;
   }
 }
 

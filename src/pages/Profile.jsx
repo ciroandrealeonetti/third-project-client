@@ -33,39 +33,47 @@ function Profile() {
     <div className="UserProfile">
       <Hero />
       <Card style={{ width: "auto", height: "auto" }}>
-      <Card.Body>
-      {profile && (
-        <>
-          <h2>Profile</h2>
-          <p>Name: {profile.name}</p>
-          <p>Age: {profile.age}</p>
-          <p>Weight: {profile.weight}</p>
-          <p>Height: {profile.height}</p>
-          <p>Level: {profile.level}</p>
-        </>
-      )}
-      <AddToWorkout />
-      {profile &&
-        profile.workouts.map((workout) => {
-          return (
-            <div>
-            <p>{workout.title} </p>
-            {workout &&
-            
-            workout.excercises.map(excercise =>{
-              return(<p>{excercise.name}</p>)
+        <Card.Body className="profileCard">
+          {profile && (
+            <>
+              <h2>Profile</h2>
+              <p>Name: {profile.name}</p>
+              <p>Age: {profile.age}</p>
+              <p>Weight: {profile.weight}</p>
+              <p>Height: {profile.height}</p>
+              <p>Level: {profile.level}</p>
+            </>
+          )}
+          {profile && (
+            <>
+              <Link to={`/editprofile`}>
+                <button className="button" type="submit">Edit Profile</button>
+              </Link>
+            </>
+          )}
+          </Card.Body>
+          </Card>
+         
+          <Card style={{ width: "auto", height: "auto" }}>
+          <Card.Body className="addWorkoutCard">
+          <AddToWorkout />
+          {profile &&
+            profile.workouts.map((workout) => {
+              return (
+                <Card style={{ width: "auto", height: "auto" }}>
+          <Card.Body className="eachWorkout">
+                <div>
+                  <p>{workout.title} </p>
+                  {workout &&
+                    workout.excercises.map((excercise) => {
+                      return <p>{excercise.name}</p>;
+                    })}
+                </div>
+                </Card.Body>
+                 </Card>
+              );
             })}
-            </div>
-            );
-        })}
-      {profile && (
-        <>
-          <Link to={`/editprofile`}>
-            <button type="submit">Edit Profile</button>
-          </Link>
-        </>
-      )}
-      </Card.Body>
+        </Card.Body>
       </Card>
     </div>
   );

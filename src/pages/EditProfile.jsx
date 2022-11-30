@@ -84,27 +84,36 @@ function EditProfile() {
     <Hero/>
       <h1>Edit Profile</h1>
       <Card style={{ width: "auto", height: "auto" }}>
-      <Card.Body>
+      <Card.Body className="editProfileCard">
       <form className="editProfileForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
+        <br />
         <input type="text" name="name" value={name} onChange={handleName} />
+        <br />
         <label htmlFor="age">Age</label>
+        <br />
         <input type="text" name="age" value={age} onChange={handleAge} />
+        <br />
         <label htmlFor="weight">Weight</label>
+        <br />
         <input
           type="number"
           name="weight"
           value={weight}
           onChange={handleWeight}
         />
+        <br />
         <label htmlFor="height">Height</label>
+        <br />
         <input
           type="number"
           name="height"
           value={height}
           onChange={handleHeight}
         />
+        <br />
         <label htmlFor="level">Level</label>
+        <br />
         <input type="text" name="level" value={level} onChange={handleLevel} />
         
        
