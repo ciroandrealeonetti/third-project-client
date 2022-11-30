@@ -36,6 +36,25 @@ body {
   align-items: center;
 }
 
+.loginPage {
+  
+  border: 2px solid black;
+  padding: 30px;
+  border-radius: 40px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  width: 200px;
+  background-color: black;
+  color: white;
+}
+
+.bodyLogin{
+ margin-right: 1600px;
+ 
+}
+
+
+
 /* .ExcerciseListPage {
   background-image: url("/public/30-days-superhero-fitness-challenge-1280x720.jpeg");
   background-size: cover;

@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/auth.context';
+import Card from "react-bootstrap/Card";
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -35,6 +36,8 @@ setErrorMessage(errorDescription);
 
   return (
     <div className="LoginPage">
+    <Card style={{ width: "auto", height: "auto" }}>
+    <Card.Body className='bodyLogin'>
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
@@ -50,6 +53,8 @@ setErrorMessage(errorDescription);
 
       <p>Don't have an account yet?</p>
       <Link to={'/signup'}> Sign Up</Link>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

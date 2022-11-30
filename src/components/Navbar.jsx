@@ -14,7 +14,7 @@ function Navbar() {
       {loggedIn && (
         <>
           <button onClick={logout}>Logout</button>
-          <h3>Hey there {user.email}</h3>
+          {/*<h3>Hey there {user.email}</h3>*/}
 
           <Link to="/profile">
             <button>Profile</button>
@@ -39,3 +39,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

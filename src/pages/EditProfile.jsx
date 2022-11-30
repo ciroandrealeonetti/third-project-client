@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
+
 
 function EditProfile() {
   const [name, setName] = useState("");
@@ -24,9 +25,14 @@ function EditProfile() {
 
   const getProfile = async () => {
     try {
+      const storedToken = localStorage.getItem("authToken");
+
       const response = await axios.get(
-        `{$process.env.REACT_APP_API_URL}/profile/${user._id}`
-      );
+        `${process.env.REACT_APP_API_URL}/profile`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        })
+
       setName(response.data.name);
       setAge(response.data.age);
       setWeight(response.data.weight);
@@ -46,22 +52,26 @@ function EditProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/profile/${user._id}`, {
+      const storedToken = localStorage.getItem("authToken");
+      await axios.put(`${process.env.REACT_APP_API_URL}/profile`, {
         name,
         age,
         weight,
         height,
         level,
-        workouts,
-      });
+        
+      }, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      }
+      );
       setName("");
       setAge(0);
       setWeight(0);
       setHeight(0);
       setLevel("");
-      setWorkouts("");
+      
 
-      navigate(`/profile/${user._id}`);
+      navigate(`/profile`);
     } catch (error) {
       console.log(error);
     }
@@ -91,15 +101,10 @@ function EditProfile() {
         />
         <label htmlFor="level">Level</label>
         <input type="text" name="level" value={level} onChange={handleLevel} />
-        <label htmlFor="workouts">Workouts</label>
-        <input
-          type="text"
-          name="workouts"
-          value={workouts}
-          onChange={handleWorkouts}
-        />
-
+        
+       
         <button type="submit">Edit Profile</button>
+        
       </form>
     </div>
   );

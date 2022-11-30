@@ -1,13 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../contexts/auth.context.js";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero.jsx";
+import AddToWorkout from "../components/AddToWorkout.jsx";
 function Profile() {
-  const { user } = useContext(AuthContext);
-  const [profile, setProfile] = useState([]);
-  
+  const [profile, setProfile] = useState(null);
 
   const getProfile = async () => {
     try {
@@ -32,20 +29,32 @@ function Profile() {
 
   return (
     <div className="UserProfile">
-    <Hero/>
-      {user && (
+      <Hero />
+      {profile && (
         <>
-          <h3>User Profile</h3>
-          <p>{user.name}</p>
-          <p>{user.age}</p>
-          <p>{user.weight}</p>
-          <p>{user.height}</p>
-          <p>{user.level}</p>
-          <p>{user.workouts}</p>
+          <h3>profile Profile</h3>
+          <p>{profile.name}</p>
+          <p>{profile.age}</p>
+          <p>{profile.weight}</p>
+          <p>{profile.height}</p>
+          <p>{profile.level}</p>
         </>
       )}
-
-      {user && (
+      <AddToWorkout />
+      {profile &&
+        profile.workouts.map((workout) => {
+          return (
+            <div>
+            <p>{workout.title} </p>
+            {workout &&
+            
+            workout.excercises.map(excercise =>{
+              return(<p>{excercise.name}</p>)
+            })}
+            </div>
+            );
+        })}
+      {profile && (
         <>
           <Link to={`/editprofile`}>
             <button type="submit">Edit Profile</button>
