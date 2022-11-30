@@ -29,7 +29,7 @@ function ExcerciseList() {
   return (
     <div className="ExcerciseListPage">
       <Hero />
-      {/*<h1>Exercises</h1>*/}
+      <h1>Exercises</h1>
       
       <div className="AllCards">
         {excerciseList.map((excersise) => {
@@ -43,7 +43,7 @@ function ExcerciseList() {
                   <h4>Type: {excersise.type}</h4>
                   {loggedIn && (
                     <Link to={`/excerciseDetails/${excersise.name}`}>
-                      <Button variant="primary">Details</Button>
+                      <Button variant="primary" className="button">Details</Button>
                     </Link>
                   )}
                 </div>

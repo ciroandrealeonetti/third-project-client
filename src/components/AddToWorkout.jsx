@@ -29,9 +29,22 @@ function AddToWorkout() {
     }
   };
 
+  const deleteWorkout = async () => {
+    try{
+await axios.delete(`${process.env.REACT_APP_API_URL}/workout`)
+//after we delete we redirect back to the project list
+//navigate('/profile')
+    }catch(error){
+        console.log(error)
+    }
+}
+
   return (
     <div className="Workout">
-      <h1>Workout Plan</h1>
+      
+      <Card style={{ width: "auto", height: "auto" }}>
+      <Card.Body>
+      <h2>Workouts</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input type="text" name="title" value={title} onChange={handleTitle} />
@@ -42,8 +55,11 @@ function AddToWorkout() {
           <option value="build muscle"> Build Muscle </option>
         </select>
 
-        <button type="submit"> Create workout</button>
+        <button className="button" type="submit"> Create workout</button>
+        <button className="button" onClick={deleteWorkout}> Delete Workout </button>
       </form>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

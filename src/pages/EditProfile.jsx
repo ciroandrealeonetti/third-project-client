@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
+import Card from "react-bootstrap/Card";
+import Hero from "../components/Hero";
 
 
 function EditProfile() {
@@ -79,8 +81,11 @@ function EditProfile() {
 
   return (
     <div className="EditProfile">
+    <Hero/>
       <h1>Edit Profile</h1>
-      <form onSubmit={handleSubmit}>
+      <Card style={{ width: "auto", height: "auto" }}>
+      <Card.Body>
+      <form className="editProfileForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" value={name} onChange={handleName} />
         <label htmlFor="age">Age</label>
@@ -103,9 +108,11 @@ function EditProfile() {
         <input type="text" name="level" value={level} onChange={handleLevel} />
         
        
-        <button type="submit">Edit Profile</button>
+        <button className="button" type="submit">Edit Profile</button>
         
       </form>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

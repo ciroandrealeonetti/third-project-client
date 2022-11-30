@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Hero from "../components/Hero";
+import Card from "react-bootstrap/Card";
+
 function ExcerciseDetails() {
   const [excersise, setExcercise] = useState([]);
   const [workout, setWorkout] = useState("");
@@ -65,6 +67,8 @@ function ExcerciseDetails() {
     <div className="ExcerciseDetails">
       <Hero />
       <h1>Exercise Details</h1>
+      <Card style={{ width: "auto", height: "auto" }}>
+      <Card.Body>
       {excersise && (
         <div key={excersise._id} className="ExcerciseCardDetails">
           <Link to={`/excerciseDetails/${excersise._id}`}>
@@ -86,6 +90,8 @@ function ExcerciseDetails() {
         </select>
         <button type="submit">Add to workout</button>
       </form>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

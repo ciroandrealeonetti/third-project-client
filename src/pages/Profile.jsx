@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero.jsx";
 import AddToWorkout from "../components/AddToWorkout.jsx";
+import Card from "react-bootstrap/Card";
+
 function Profile() {
   const [profile, setProfile] = useState(null);
 
@@ -30,14 +32,16 @@ function Profile() {
   return (
     <div className="UserProfile">
       <Hero />
+      <Card style={{ width: "auto", height: "auto" }}>
+      <Card.Body>
       {profile && (
         <>
-          <h3>profile Profile</h3>
-          <p>{profile.name}</p>
-          <p>{profile.age}</p>
-          <p>{profile.weight}</p>
-          <p>{profile.height}</p>
-          <p>{profile.level}</p>
+          <h2>Profile</h2>
+          <p>Name: {profile.name}</p>
+          <p>Age: {profile.age}</p>
+          <p>Weight: {profile.weight}</p>
+          <p>Height: {profile.height}</p>
+          <p>Level: {profile.level}</p>
         </>
       )}
       <AddToWorkout />
@@ -61,6 +65,8 @@ function Profile() {
           </Link>
         </>
       )}
+      </Card.Body>
+      </Card>
     </div>
   );
 }

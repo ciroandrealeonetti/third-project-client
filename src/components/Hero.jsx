@@ -5,7 +5,7 @@ function Hero() {
     <main>
       <div className="hero-image">
         <div className="hero-text">
-          <h1>Exercises</h1>
+          <h1>Wanafit</h1>
           <p>Get in shape!</p>
          {/* <button className="button-87">Discover More</button>*/}
         </div>

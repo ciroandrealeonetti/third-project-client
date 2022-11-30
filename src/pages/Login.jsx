@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/auth.context';
 import Card from "react-bootstrap/Card";
+import Hero from '../components/Hero';
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -36,8 +37,9 @@ setErrorMessage(errorDescription);
 
   return (
     <div className="LoginPage">
+    <Hero/>
     <Card style={{ width: "auto", height: "auto" }}>
-    <Card.Body className='bodyLogin'>
+              <Card.Body>
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>

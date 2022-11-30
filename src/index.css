@@ -1,6 +1,7 @@
 .responsive {
   width: 100%;
   height: auto;
+  
 }
 
 body {
@@ -28,12 +29,14 @@ body {
   width: 200px;
   background-color: black;
   color: white;
+  
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .loginPage {
@@ -52,6 +55,21 @@ body {
  margin-right: 1600px;
  
 }
+
+.button{
+  
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+}
+
+
 
 
 

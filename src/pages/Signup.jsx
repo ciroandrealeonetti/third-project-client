@@ -2,6 +2,8 @@ import axios from "axios";
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Hero from "../components/Hero";
 
 function Signup(props) {
   const [name, setName] = useState("");
@@ -32,6 +34,9 @@ function Signup(props) {
 
   return (
     <div className="SignupPage">
+    <Hero/>
+    <Card style={{ width: "auto", height: "auto" }}>
+              <Card.Body>
       <h1>Signup</h1>
 
       <form onSubmit={handleSignupSubmit}>
@@ -56,6 +61,8 @@ function Signup(props) {
 
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
+      </Card.Body>
+      </Card>
     </div>
   );
 }
