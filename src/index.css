@@ -20,7 +20,7 @@ body {
   padding: 0px 20px;
   width: 100%;
   margin-bottom: 0px;
-  padding: 5px;
+  padding: 0px;
   display: inline;
   float: left;
 }
@@ -81,10 +81,11 @@ body {
 .detailsCard{
   border: 2px solid black;
   padding: 20px;
+  
   border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
-  width: 200px;
+  width: 250px;
   height: 800px;
   background-color: black;
   color: white;
