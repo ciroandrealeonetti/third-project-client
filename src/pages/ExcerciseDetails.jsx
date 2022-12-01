@@ -36,7 +36,7 @@ function ExcerciseDetails() {
   const getExcerciseDetails = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5005/excercises/details/${name}`
+        `${process.env.REACT_APP_API_URL}/excercises/details/${name}`
       );
       setExcercise(response.data);
       console.log(response.data);
@@ -48,7 +48,7 @@ function ExcerciseDetails() {
   const handleSubmit = async () => {
     try {
       const resp = await axios.post(
-        `http://localhost:5005/excercises/details/${name}`, {workoutId:workout}
+        `${process.env.REACT_APP_API_URL}/excercises/details/${name}`, {workoutId:workout}
       );
       
       console.log(resp.data);

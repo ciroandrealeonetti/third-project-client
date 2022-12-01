@@ -13,8 +13,8 @@ function Home() {
         alt="Nature"
         className="responsive"
       ></img>
-
-      <h1>WanaFit</h1>
+      
+    <h1>WanaFit</h1>
       <Link to="/excersiseList">
         <button className="button">Exercises</button>
       </Link>
