@@ -1,12 +1,17 @@
+
+
 .responsive {
   width: 100%;
   height: auto;
-  
+  max-inline-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 400%;
 }
 
 body {
   margin: 0;
-  
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Navbar {
@@ -14,16 +19,20 @@ body {
   color: white;
   padding: 0px 20px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   padding: 5px;
   display: inline;
   float: left;
 }
 
+.exerciseName{
+  color: white;
+}
+
 .card-body {
   border: 2px solid black;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -36,7 +45,7 @@ body {
 .profileCard{
   border: 2px solid black;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -48,7 +57,7 @@ body {
 .workoutCard{
   border: 2px solid black;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -60,7 +69,7 @@ body {
 .addWorkoutCard{
   border: 2px solid black;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -72,7 +81,7 @@ body {
 .detailsCard{
   border: 2px solid black;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -82,7 +91,7 @@ body {
 }
 
 .eachWorkout{
-height: 100px
+height: 200px
 }
 
 .card {
@@ -96,7 +105,7 @@ height: 100px
   
   border: 2px solid black;
   padding: 30px;
-  border-radius: 40px;
+  border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 40px;
   width: 200px;
@@ -199,7 +208,7 @@ height: 100px
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/30-days-superhero-fitness-challenge-1280x720.jpeg");
+    url("../public/CHRIS\ HEMSWORTH\ WORKOUT.jpeg");
   min-height: 50vh;
 }
 

@@ -6,9 +6,9 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
-function AddToWorkout() {
+function AddToWorkout(props) {
   const [title, setTitle] = useState("");
-  const [goal, setGoal] = useState("");
+  const [goal, setGoal] = useState("lose weight");
   const { user } = useContext(AuthContext);
 
   const handleTitle = (e) => setTitle(e.target.value);
@@ -23,21 +23,15 @@ function AddToWorkout() {
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/workouts/create`,
         { title, goal, userId: user._id }
+
       );
+      props.getProfile()
     } catch (error) {
       console.log(error);
     }
   };
 
-  const deleteWorkout = async () => {
-    try{
-await axios.delete(`${process.env.REACT_APP_API_URL}/workout`)
-//after we delete we redirect back to the project list
-//navigate('/profile')
-    }catch(error){
-        console.log(error)
-    }
-}
+  
 
   return (
     <div className="Workout">
@@ -57,7 +51,7 @@ await axios.delete(`${process.env.REACT_APP_API_URL}/workout`)
         </select>
 
         <button className="button" type="submit"> Create workout</button>
-        <button className="button" onClick={deleteWorkout}> Delete Workout </button>
+       
       </form>
       </Card.Body>
       </Card>

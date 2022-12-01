@@ -29,6 +29,15 @@ function Profile() {
     getProfile();
   }, []);
 
+  const deleteWorkout = async (id) => {
+    try{
+await axios.delete(`${process.env.REACT_APP_API_URL}/workouts/${id}`)
+getProfile();
+    }catch(error){
+        console.log(error)
+    }
+}
+
   return (
     <div className="UserProfile">
       <Hero />
@@ -56,18 +65,19 @@ function Profile() {
          
           <Card style={{ width: "auto", height: "auto" }}>
           <Card.Body className="addWorkoutCard">
-          <AddToWorkout />
+          <AddToWorkout getProfile={getProfile}/>
           {profile &&
             profile.workouts.map((workout) => {
               return (
                 <Card style={{ width: "auto", height: "auto" }}>
           <Card.Body className="eachWorkout">
                 <div>
-                  <p>{workout.title} </p>
+                  <h4>{workout.title} </h4>
                   {workout &&
                     workout.excercises.map((excercise) => {
                       return <p>{excercise.name}</p>;
                     })}
+                    <button className="button" onClick={() => deleteWorkout(workout._id)}> Delete Workout </button>
                 </div>
                 </Card.Body>
                  </Card>

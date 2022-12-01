@@ -6,23 +6,23 @@ import Hero from "../components/Hero";
 function Home() {
   return (
     <body className="home">
-    <Hero/>
+    {/*<Hero/>*/}
     <div >
-    {/*<img
-        src="/30-days-superhero-fitness-challenge-1280x720.jpeg"
+   <img
+        src="/CHRIS HEMSWORTH WORKOUT.jpeg"
         alt="Nature"
         className="responsive"
-      ></img>*/}
+      ></img>
 
-      <h1>Find the right one!</h1>
+      <h1>WanaFit</h1>
       <Link to="/excersiseList">
         <button className="button">Exercises</button>
       </Link>
-      
       
     </div>
     </body>
   );
 }
+
 
 export default Home;

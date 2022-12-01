@@ -72,7 +72,7 @@ function ExcerciseDetails() {
       {excersise && (
         <div key={excersise._id} className="ExcerciseCardDetails">
           <Link to={`/excerciseDetails/${excersise._id}`}>
-            <h3>{excersise.name}</h3>
+            <h3 className="exerciseName">{excersise.name}</h3>
           </Link>
           <h4>Type: {excersise.type}</h4>
           <h4>Muscle: {excersise.muscle}</h4>

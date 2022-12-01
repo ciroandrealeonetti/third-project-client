@@ -38,7 +38,7 @@ function ExcerciseList() {
               <Card.Body>
                 <div key={excersise._id} className="ExcerciseCard card">
                   <Link to={`/excersiseList/${excersise._id}`}>
-                    <h3>{excersise.name}</h3>
+                    <h3 className="exerciseName">{excersise.name}</h3>
                   </Link>
                   <h4>Type: {excersise.type}</h4>
                   {loggedIn && (
