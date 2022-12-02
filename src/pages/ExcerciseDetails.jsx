@@ -45,8 +45,9 @@ function ExcerciseDetails() {
     }
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     try {
+e.preventDefault()
       const resp = await axios.post(
         `${process.env.REACT_APP_API_URL}/excercises/details/${name}`, {workoutId:workout}
       );
